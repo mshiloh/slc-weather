@@ -1,0 +1,1068 @@
+/* Mobile */
+
+@media only screen and (max-width: 850px) {
+    body {
+        box-sizing: border-box;
+        font-family: 'Maven Pro', sans-serif;
+        margin: 0;
+    }
+    @import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Encode+Sans+Expanded:100,200,300,400,500,600,700,800,900|Krona+One|Khula:300,400,600,700,800|Palanquin:100,200,300,400,500,600,700|Varela|PT+Sans+Caption:400,700|Merriweather:300,300i,400,400i,700,700i,900,900i|Antic|Arimo|Asap:400,500,700|Catamaran|Didact+Gothic|Dosis|Gudea|Hind|Hind+Siliguri:300,400,500,600,700|Josefin+Sans:300,400,700|Julius+Sans+One|Mallanna|Maven+Pro:400,500,700,900|Montserrat+Alternates:100,200,400,500,800,900|Montserrat+Subrayada:400,700|Muli:200,200i,300,300i,400,700,700i,800,800i,900,900i|Nanum+Gothic|Numans|Oxygen|Poppins:200,200i,300,400,500,700,800,900|Prompt:200,300,400,600,700,900|Questrial|Quicksand:300,400,500,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Reem+Kufi|Syncopate:400,700|Wire+One|Work+Sans:100,200,300,400,500,700|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Ubuntu:300,300i,400,400i,500,500i,700,700i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+    .app-wrapper {
+        display: grid;
+        grid-template-areas: "hdr" "nav" "con" "ftr";
+    }
+    .content-wrapper {
+        grid-area: con;
+        background-image: url("https://i.imgur.com/ofjJgLe.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    /* CURRENT WEATHER / HEADER */
+    .headerWrapper {
+        grid-area: hdr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        background-image: url("https://i.imgur.com/KdT08L4.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 10px;
+    }
+    .headerContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 50vw;
+        min-height: 120px;
+    }
+    .forecastInfo {
+        display: grid;
+        grid-template-areas: "dhdr dhdr dhdr" "dhdr dhdr dhdr" "dtmp dicn dfcd" "dtmp dicn dfcd" "dtmp dicn dfcd" "dsum dsum dsum";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .titleAndDate {
+        grid-area: dhdr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+    .dslc {
+        font-weight: 500;
+        font-size: 8vw;
+    }
+    .dtim {
+        font-size: 3.5vw;
+    }
+    .dtmp {
+        grid-area: dtmp;
+        font-size: 8vw;
+    }
+    .currentImage {
+        grid-area: dicn;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .dicn {
+        width: 20vw;
+        padding: 10px;
+    }
+    .forecastDetails {
+        grid-area: dfcd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding-left: 2vw;
+    }
+    .dsum {
+        grid-area: dsum;
+        padding-bottom: 10px;
+    }
+    .dsum,
+    .dicn,
+    .dprc,
+    .dhum,
+    .dwin {
+        font-size: 3.3vw;
+    }
+    .dslc,
+    .dtim,
+    .dsum,
+    .dicn,
+    .dtmp,
+    .dprc,
+    .dhum,
+    .dwin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    Nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 50px;
+        background-color: #1D2731;
+    }
+    .nav {
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 2.5vw;
+    }
+    p {
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+    .liveFeedHeader,
+    .weeklyHeader,
+    .forecastByHourHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        color: whitesmoke;
+        font-weight: 500;
+    }
+    /* HOURLY WEATHER */
+    .hourlyWeatherContainer {
+        display: grid;
+        grid-template-rows: .5fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "tim icn tmp hum prc win" "tim icn tmp hce pce wce" "tim sum feeHr hce pce wce" "hrBdr hrBdr hrBdr hrBdr hrBdr hrBdr";
+        justify-content: space-evenly;
+        font-weight: 500;
+        clear: both;
+        height: 15vw;
+        min-height: 75px;
+        padding: 10px;
+    }
+    .forecastByHourHeader {
+        color: whitesmoke;
+        margin-bottom: 0;
+        margin-top: 25px;
+    }
+    .onlyDate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        font-weight: 500;
+        color: whitesmoke;
+        margin-bottom: 20px;
+    }
+    .hourlyWeatherImageSection,
+    .hrTemperatureContainer,
+    .hrHumidityContainer,
+    .hrPrecipitationContainer,
+    .hrWindContainer,
+    .hrTimeContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .forecastContent {
+        font-size: 3vw;
+    }
+    .feeHr {
+        grid-area: feeHr;
+    }
+    .timHr {
+        grid-area: tim;
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    .icnHr {
+        grid-area: icn;
+    }
+    .hourlyIcon {
+        width: 10vw;
+    }
+    .sumHr {
+        grid-area: sum;
+        font-size: 1.5vw;
+    }
+    .tmpHr {
+        grid-area: tmp;
+        font-size: 3.4vw;
+    }
+    .prcHr {
+        grid-area: prc;
+    }
+    .pceHr {
+        grid-area: pce;
+    }
+    .humHr {
+        grid-area: hum;
+    }
+    .hceHr {
+        grid-area: hce;
+    }
+    .winHr {
+        grid-area: win;
+    }
+    .wceHr {
+        grid-area: wce;
+    }
+    .tmpHr,
+    .humHr,
+    .hceHr,
+    .prcHr,
+    .pceHr,
+    .winHr,
+    .wceHr,
+    .feeHr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .humHr,
+    .prcHr,
+    .winHr,
+    .sumHr,
+    .feeHr {
+        font-size: 2vw;
+    }
+    .hceHr,
+    .pceHr,
+    .wceHr {
+        font-size: 2.5vw;
+    }
+    .hrBorder {
+        grid-area: hrBdr;
+        padding: 5px;
+        border-bottom: 1px solid black;
+    }
+    /* WEEKLY WEATHER */
+    .forecastByWeekHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        font-weight: 500;
+        color: whitesmoke;
+        margin-bottom: 20px;
+        margin-top: 25px;
+    }
+    .weeklyWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .weeklyWeatherContainer {
+        display: grid;
+        grid-template-columns: .6fr .6fr .5fr 1fr;
+        grid-template-areas: "wtim wicn wtmp wdfd" "wkBdr wkBdr wkBdr wkBdr";
+        justify-content: space-evenly;
+        font-weight: 500;
+        clear: both;
+        height: 30vw;
+        min-height: 75px;
+        padding: 10px;
+    }
+    .wkTimeContainer,
+    .weeklyWeatherImageSection,
+    .wkTemperatureContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .wkInfoForecastDetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding-left: 3vw;
+    }
+    .wkTimeContainer {
+        grid-area: wtim;
+    }
+    .weeklyWeatherImageSection {
+        grid-area: wicn;
+    }
+    .wkTemperatureContainer {
+        grid-area: wtmp;
+        text-align: center;
+    }
+    .wkInfoForecastDetails {
+        grid-area: wdfd;
+    }
+    .wtim {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+    .wicn {
+        width: 17vw;
+        padding: 5vw;
+    }
+    .wsum {
+        font-size: 1.5vw;
+        text-align: center;
+    }
+    .whtmp,
+    .wltmp {
+        font-size: 4.5vw;
+    }
+    .whttl,
+    .wlttl {
+        font-size: 3.3vw;
+    }
+    .whum,
+    .wprc,
+    .wwin,
+    .wsum {
+        font-size: 3vw;
+    }
+    .whce,
+    .wpce,
+    .wwce {
+        font-size: 3vw;
+    }
+    .wkBorder {
+        grid-area: wkBdr;
+        border-bottom: 1px solid black;
+    }
+    footer {
+        grid-area: ftr;
+        display: flex;
+        align-items: center;
+        background-color: rgb(38, 35, 41);
+        height: 50px;
+        text-indent: 20px;
+        clear: both;
+    }
+    .footer {
+        color: rgb(226, 220, 213);
+        font-size: 2.3vw;
+    }
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 850px) {
+    body {
+        box-sizing: border-box;
+        font-family: 'Maven Pro', sans-serif;
+        margin: 0;
+    }
+    @import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Encode+Sans+Expanded:100,200,300,400,500,600,700,800,900|Krona+One|Khula:300,400,600,700,800|Palanquin:100,200,300,400,500,600,700|Varela|PT+Sans+Caption:400,700|Merriweather:300,300i,400,400i,700,700i,900,900i|Antic|Arimo|Asap:400,500,700|Catamaran|Didact+Gothic|Dosis|Gudea|Hind|Hind+Siliguri:300,400,500,600,700|Josefin+Sans:300,400,700|Julius+Sans+One|Mallanna|Maven+Pro:400,500,700,900|Montserrat+Alternates:100,200,400,500,800,900|Montserrat+Subrayada:400,700|Muli:200,200i,300,300i,400,700,700i,800,800i,900,900i|Nanum+Gothic|Numans|Oxygen|Poppins:200,200i,300,400,500,700,800,900|Prompt:200,300,400,600,700,900|Questrial|Quicksand:300,400,500,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Reem+Kufi|Syncopate:400,700|Wire+One|Work+Sans:100,200,300,400,500,700|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Ubuntu:300,300i,400,400i,500,500i,700,700i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+    .app-wrapper {
+        display: grid;
+        grid-template-areas: "hdr" "nav" "con" "ftr";
+    }
+    .content-wrapper {
+        grid-area: con;
+        background-image: url("https://i.imgur.com/ofjJgLe.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    /* CURRENT WEATHER / HEADER */
+    .headerWrapper {
+        grid-area: hdr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        background-image: url("https://i.imgur.com/KdT08L4.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 10px;
+    }
+    .headerContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 50vw;
+        min-height: 120px;
+    }
+    .forecastInfo {
+        display: grid;
+        grid-template-areas: "dhdr dhdr dhdr" "dhdr dhdr dhdr" "dtmp dicn dfcd" "dtmp dicn dfcd" "dtmp dicn dfcd" "dsum dsum dsum";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .titleAndDate {
+        grid-area: dhdr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+    .dslc {
+        font-weight: 500;
+        font-size: 8vw;
+        padding-bottom: 10px;
+    }
+    .dtim {
+        font-size: 3.5vw;
+        padding-bottom: 10px;
+    }
+    .dtmp {
+        grid-area: dtmp;
+        font-size: 8vw;
+    }
+    .currentImage {
+        grid-area: dicn;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .dicn {
+        width: 20vw;
+        padding: 20px;
+    }
+    .forecastDetails {
+        grid-area: dfcd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding-left: 2vw;
+    }
+    .dsum {
+        grid-area: dsum;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .dsum,
+    .dicn,
+    .dprc,
+    .dhum,
+    .dwin {
+        font-size: 3.3vw;
+    }
+    .dslc,
+    .dtim,
+    .dsum,
+    .dicn,
+    .dtmp,
+    .dprc,
+    .dhum,
+    .dwin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    Nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 75px;
+        background-color: #1D2731;
+    }
+    .nav {
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 2.5vw;
+    }
+    p {
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+    .liveFeedHeader,
+    .weeklyHeader,
+    .forecastByHourHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        color: whitesmoke;
+        font-weight: 500;
+    }
+    /* HOURLY WEATHER */
+    .hourlyWeatherContainer {
+        display: grid;
+        grid-template-rows: .5fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "tim icn tmp hum prc win" "tim icn tmp hce pce wce" "tim sum feeHr hce pce wce" "hrBdr hrBdr hrBdr hrBdr hrBdr hrBdr";
+        justify-content: space-evenly;
+        font-weight: 500;
+        clear: both;
+        height: 14vw;
+        min-height: 75px;
+        padding: 10px;
+    }
+    .forecastByHourHeader {
+        color: whitesmoke;
+        margin-bottom: 0;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .onlyDate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        font-weight: 500;
+        color: whitesmoke;
+        margin-bottom: 20px;
+    }
+    .hourlyWeatherImageSection,
+    .hrTemperatureContainer,
+    .hrHumidityContainer,
+    .hrPrecipitationContainer,
+    .hrWindContainer,
+    .hrTimeContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .forecastContent {
+        font-size: 3vw;
+    }
+    .feeHr {
+        grid-area: feeHr;
+    }
+    .timHr {
+        grid-area: tim;
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    .icnHr {
+        grid-area: icn;
+    }
+    .hourlyIcon {
+        width: 10vw;
+    }
+    .sumHr {
+        grid-area: sum;
+        font-size: 1.5vw;
+    }
+    .tmpHr {
+        grid-area: tmp;
+        font-size: 3.4vw;
+    }
+    .prcHr {
+        grid-area: prc;
+    }
+    .pceHr {
+        grid-area: pce;
+    }
+    .humHr {
+        grid-area: hum;
+    }
+    .hceHr {
+        grid-area: hce;
+    }
+    .winHr {
+        grid-area: win;
+    }
+    .wceHr {
+        grid-area: wce;
+    }
+    .tmpHr,
+    .humHr,
+    .hceHr,
+    .prcHr,
+    .pceHr,
+    .winHr,
+    .wceHr,
+    .feeHr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .humHr,
+    .prcHr,
+    .winHr,
+    .sumHr,
+    .feeHr {
+        font-size: 2vw;
+    }
+    .hceHr,
+    .pceHr,
+    .wceHr {
+        font-size: 2.5vw;
+    }
+    .hrBorder {
+        grid-area: hrBdr;
+        padding: 5px;
+        border-bottom: 1px solid black;
+    }
+    /* WEEKLY WEATHER */
+    .forecastByWeekHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        font-weight: 500;
+        color: whitesmoke;
+        margin-bottom: 20px;
+        margin-top: 25px;
+    }
+    .weeklyWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .weeklyWeatherContainer {
+        display: grid;
+        grid-template-columns: .6fr .6fr .5fr 1fr;
+        grid-template-areas: "wtim wicn wtmp wdfd" "wkBdr wkBdr wkBdr wkBdr";
+        justify-content: space-evenly;
+        font-weight: 500;
+        clear: both;
+        height: 30vw;
+        min-height: 75px;
+        padding: 10px;
+    }
+    .wkTimeContainer,
+    .weeklyWeatherImageSection,
+    .wkTemperatureContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .wkInfoForecastDetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding-left: 3vw;
+    }
+    .wkTimeContainer {
+        grid-area: wtim;
+    }
+    .weeklyWeatherImageSection {
+        grid-area: wicn;
+    }
+    .wkTemperatureContainer {
+        grid-area: wtmp;
+        text-align: center;
+    }
+    .wkInfoForecastDetails {
+        grid-area: wdfd;
+    }
+    .wtim {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+    .wicn {
+        width: 18vw;
+        padding: 5vw;
+    }
+    .wsum {
+        font-size: 1.5vw;
+        text-align: center;
+    }
+    .whtmp,
+    .wltmp {
+        font-size: 4.5vw;
+    }
+    .whttl,
+    .wlttl {
+        font-size: 3.3vw;
+    }
+    .whum,
+    .wprc,
+    .wwin,
+    .wsum {
+        font-size: 3vw;
+    }
+    .whce,
+    .wpce,
+    .wwce {
+        font-size: 3vw;
+    }
+    .wkBorder {
+        grid-area: wkBdr;
+        border-bottom: 1px solid black;
+    }
+    footer {
+        grid-area: ftr;
+        display: flex;
+        align-items: center;
+        background-color: rgb(38, 35, 41);
+        height: 75px;
+        text-indent: 20px;        
+        clear: both;
+    }
+    .footer {
+        color: rgb(226, 220, 213);
+        font-size: 2.3vw;
+    }
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 1200px) {
+    body {
+        box-sizing: border-box;
+        font-family: 'Maven Pro', sans-serif;
+        margin: 0;
+    }
+    @import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Encode+Sans+Expanded:100,200,300,400,500,600,700,800,900|Krona+One|Khula:300,400,600,700,800|Palanquin:100,200,300,400,500,600,700|Varela|PT+Sans+Caption:400,700|Merriweather:300,300i,400,400i,700,700i,900,900i|Antic|Arimo|Asap:400,500,700|Catamaran|Didact+Gothic|Dosis|Gudea|Hind|Hind+Siliguri:300,400,500,600,700|Josefin+Sans:300,400,700|Julius+Sans+One|Mallanna|Maven+Pro:400,500,700,900|Montserrat+Alternates:100,200,400,500,800,900|Montserrat+Subrayada:400,700|Muli:200,200i,300,300i,400,700,700i,800,800i,900,900i|Nanum+Gothic|Numans|Oxygen|Poppins:200,200i,300,400,500,700,800,900|Prompt:200,300,400,600,700,900|Questrial|Quicksand:300,400,500,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Reem+Kufi|Syncopate:400,700|Wire+One|Work+Sans:100,200,300,400,500,700|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Ubuntu:300,300i,400,400i,500,500i,700,700i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+    .app-wrapper {
+        display: grid;
+        grid-template-areas: "hdr" "nav" "con" "ftr";
+    }
+    .content-wrapper {
+        grid-area: con;
+        background-image: url("https://i.imgur.com/ofjJgLe.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    /* CURRENT WEATHER / HEADER */
+    .headerWrapper {
+        grid-area: hdr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        background-image: url("https://i.imgur.com/KdT08L4.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 10px;
+    }
+    .headerContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 50vw;
+        min-height: 120px;
+    }
+    .forecastInfo {
+        display: grid;
+        grid-template-areas: "dhdr dhdr dhdr" "dhdr dhdr dhdr" "dtmp dicn dfcd" "dtmp dicn dfcd" "dtmp dicn dfcd" "dsum dsum dsum";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .titleAndDate {
+        grid-area: dhdr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+    .dslc {
+        font-weight: 500;
+        font-size: 8vw;
+    }
+    .dtim {
+        font-size: 3.5vw;
+    }
+    .dtmp {
+        grid-area: dtmp;
+        font-size: 8vw;
+    }
+    .currentImage {
+        grid-area: dicn;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .dicn {
+        width: 20vw;
+        padding: 30px;
+    }
+    .forecastDetails {
+        grid-area: dfcd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding-left: 2vw;
+    }
+    .dsum {
+        grid-area: dsum;
+        padding-bottom: 10px;
+    }
+    .dsum,
+    .dicn,
+    .dprc,
+    .dhum,
+    .dwin {
+        font-size: 3.3vw;
+    }
+    .dslc,
+    .dtim,
+    .dsum,
+    .dicn,
+    .dtmp,
+    .dprc,
+    .dhum,
+    .dwin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    Nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 90px;
+        background-color: #1D2731;
+    }
+    .nav {
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 2.5vw;
+    }
+    p {
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+    .liveFeedHeader,
+    .weeklyHeader,
+    .forecastByHourHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        color: whitesmoke;
+        font-weight: 500;
+    }
+    /* HOURLY WEATHER */
+    .hourlyWeatherContainer {
+        display: grid;
+        grid-template-rows: .5fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "tim icn tmp hum prc win" "tim icn tmp hce pce wce" "tim sum feeHr hce pce wce" "hrBdr hrBdr hrBdr hrBdr hrBdr hrBdr";
+        justify-content: space-evenly;
+        font-weight: 500;
+        clear: both;
+        height: 12.9vw;
+        min-height: 75px;
+        padding: 10px;
+    }
+    .forecastByHourHeader {
+        color: whitesmoke;
+        margin-bottom: 0;
+        margin-top: 25px;
+    }
+    .onlyDate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        font-weight: 500;
+        color: whitesmoke;
+        margin-bottom: 20px;
+    }
+    .hourlyWeatherImageSection,
+    .hrTemperatureContainer,
+    .hrHumidityContainer,
+    .hrPrecipitationContainer,
+    .hrWindContainer,
+    .hrTimeContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .forecastContent {
+        font-size: 3vw;
+    }
+    .feeHr {
+        grid-area: feeHr;
+    }
+    .timHr {
+        grid-area: tim;
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    .icnHr {
+        grid-area: icn;
+    }
+    .hourlyIcon {
+        width: 10vw;
+    }
+    .sumHr {
+        grid-area: sum;
+        font-size: 1.5vw;
+    }
+    .tmpHr {
+        grid-area: tmp;
+        font-size: 3.4vw;
+    }
+    .prcHr {
+        grid-area: prc;
+    }
+    .pceHr {
+        grid-area: pce;
+    }
+    .humHr {
+        grid-area: hum;
+    }
+    .hceHr {
+        grid-area: hce;
+    }
+    .winHr {
+        grid-area: win;
+    }
+    .wceHr {
+        grid-area: wce;
+    }
+    .tmpHr,
+    .humHr,
+    .hceHr,
+    .prcHr,
+    .pceHr,
+    .winHr,
+    .wceHr,
+    .feeHr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .humHr,
+    .prcHr,
+    .winHr,
+    .sumHr,
+    .feeHr {
+        font-size: 2vw;
+    }
+    .hceHr,
+    .pceHr,
+    .wceHr {
+        font-size: 2.5vw;
+    }
+    .hrBorder {
+        grid-area: hrBdr;
+        padding: 5px;
+        border-bottom: 1px solid black;
+    }
+    /* WEEKLY WEATHER */
+    .forecastByWeekHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        text-align: center;
+        font-weight: 500;
+        color: whitesmoke;
+        margin-bottom: 20px;
+        margin-top: 25px;
+    }
+    .weeklyWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .weeklyWeatherContainer {
+        display: grid;
+        grid-template-columns: .6fr .6fr .5fr 1fr;
+        grid-template-areas: "wtim wicn wtmp wdfd" "wkBdr wkBdr wkBdr wkBdr";
+        justify-content: space-evenly;
+        font-weight: 500;
+        clear: both;
+        height: 30vw;
+        min-height: 75px;
+        padding: 10px;
+    }
+    .wkTimeContainer,
+    .weeklyWeatherImageSection,
+    .wkTemperatureContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .wkInfoForecastDetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding-left: 3vw;
+    }
+    .wkTimeContainer {
+        grid-area: wtim;
+    }
+    .weeklyWeatherImageSection {
+        grid-area: wicn;
+    }
+    .wkTemperatureContainer {
+        grid-area: wtmp;
+        text-align: center;
+    }
+    .wkInfoForecastDetails {
+        grid-area: wdfd;
+    }
+    .wtim {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+    .wicn {
+        width: 18vw;
+        padding: 5vw;
+    }
+    .wsum {
+        font-size: 1.5vw;
+        text-align: center;
+    }
+    .whtmp,
+    .wltmp {
+        font-size: 4.5vw;
+    }
+    .whttl,
+    .wlttl {
+        font-size: 3.3vw;
+    }
+    .whum,
+    .wprc,
+    .wwin,
+    .wsum {
+        font-size: 3vw;
+    }
+    .whce,
+    .wpce,
+    .wwce {
+        font-size: 3vw;
+    }
+    .wkBorder {
+        grid-area: wkBdr;
+        border-bottom: 1px solid black;
+    }
+    footer {
+        grid-area: ftr;
+        display: flex;
+        align-items: center;
+        background-color: rgb(38, 35, 41);
+        height: 90px;
+        text-indent: 20px;
+        clear: both;
+    }
+    .footer {
+        color: rgb(226, 220, 213);
+        font-size: 2.3vw;
+    }
+}
