@@ -291,6 +291,7 @@
     }
     .wkTimeContainer {
         grid-area: wtim;
+        padding-left: 10px;
     }
     .weeklyWeatherImageSection {
         grid-area: wicn;
