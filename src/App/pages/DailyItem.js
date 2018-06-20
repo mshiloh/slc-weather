@@ -1,13 +1,14 @@
 import React from "react";
+var moment = require("moment");
 
 function DailyItem(props) {
-    const { index, summary, icon, precipProbability, temperatureHigh, temperatureLow, humidity, windSpeed } = props;
-    let time = new Date((index * 3600000) + new Date().getDate()).toLocaleDateString();
+    const { index, summary, icon, precipProbability, temperatureHigh, temperatureLow, humidity, windSpeed, time } = props;
+    var dt = moment.unix(time).format("dddd, MM/DD/YYYY");
     return (
         <div className="weeklyWrapper">
             <div className="weeklyWeatherContainer">
                 <div className="wkTimeContainer">
-                    <p className="wtim">{time}</p>
+                    <p className="wtim">{dt}</p>
                     <p className="wsum">{summary}</p>
                 </div>
                 <div className="weeklylyWeatherImageSection">
