@@ -25,7 +25,7 @@ const weatherReducer = (state = initialState, action) => {
   }
 }
 
-const darkSky = "http://cors.vschool.io?url=https://api.darksky.net/forecast/22d6c6ed8f022dbccbc67b09daa4a6d5/40.758701,-111.876183";
+const darkSky = "https://vschool-cors.herokuapp.com?url=https://api.darksky.net/forecast/22d6c6ed8f022dbccbc67b09daa4a6d5/40.758701,-111.876183";
 
 export const getWeather = () => {
   return dispatch => {
